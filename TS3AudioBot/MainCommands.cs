@@ -1077,7 +1077,7 @@ namespace TS3AudioBot
 		[Command("settings set")]
 		public static void CommandSettingsSet(ConfBot config, string path, string value)
 		{
-			SettingsSet(config, path, value);
+			SettingsSet(config, path, '"' + value + '"');
 			if (!config.SaveWhenExists())
 			{
 				throw new CommandException("Value was set but could not be saved to file. All changes are temporary and will be lost when the bot restarts.",
